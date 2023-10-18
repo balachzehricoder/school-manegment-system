@@ -1,0 +1,47 @@
+﻿@model school_manegment_system.Models.school
+
+@{
+    ViewData["student performance"] = "Details";
+}
+
+<div class="container">
+    <h1>Student Details</h1>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">student Information</h4>
+                    <hr />
+
+                    <dl class="row">
+                        <dt class="col-sm-4">Name</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+
+                        <dt class="col-sm-4">Parent Name</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.parent_name)</dd>
+
+                        <dt class="col-sm-4">Teacher's Name</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.class_teachname)</dd>
+
+                        <dt class="col-sm-4">Class</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.classs)</dd>
+
+                        <dt class="col-sm-4">Progress</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.progress)</dd>
+
+                        <dt class="col-sm-4">Section</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.section)</dd>
+
+                        <dt class="col-sm-4">Roll No</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.roll_no)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Logout" asp-controller="parent" class="btn btn-danger">Logout</a>
+    </div>
+</div>
