@@ -11,7 +11,6 @@ namespace leacherslogin.Controllers
     public class teachersloginController : Controller
     {
         private readonly database _context;
-        private object _contaxt;
 
         public teachersloginController(database context)
         {
@@ -61,6 +60,7 @@ namespace leacherslogin.Controllers
             }
             else
             {
+                HttpContext.Session.SetString("user_name", data.Name.ToString());
                 HttpContext.Session.SetString("user_id", data.Id.ToString());
                 return RedirectToAction("Index", "schools","index");
             }
@@ -88,8 +88,8 @@ namespace leacherslogin.Controllers
             }
             else
             {
-                HttpContext.Session.SetString("admin_id", data.Id.ToString());
-                return RedirectToAction("create", "teacherslogin", "create");
+                HttpContext.Session.SetString("user_id", data.Id.ToString());
+                return RedirectToAction(nameof(Create));
             }
 
 

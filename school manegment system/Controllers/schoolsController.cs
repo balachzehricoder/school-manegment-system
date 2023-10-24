@@ -22,9 +22,12 @@ namespace school_manegment_system.Controllers
         // GET: schools
         public async Task<IActionResult> Index()
         {
+            var s = HttpContext.Session.GetString("user_name");
+            var t = _context.school.Where(ta => ta.class_teachname == s).ToList();
+            return View(t);/*
               return _context.school != null ? 
                           View(await _context.school.ToListAsync()) :
-                          Problem("Entity set 'database.school'  is null.");
+                          Problem("Entity set 'database.school'  is null.");*/
         }
 
         // GET: schools/Details/5

@@ -42,7 +42,6 @@ public class parentController : Controller
     // GET: parent/About
 
 
-    [Authorize]
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null || _context.school == null)

@@ -1,5 +1,5 @@
 ﻿@model school_manegment_system.Models.adminlogin
-
+<body class="bgimg" >
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -8,7 +8,7 @@
                     <h4 class="text-center">admin portal</h4>
                 </div>
                 <div class="card-body">
-                    <form asp-action="Login">
+                    <form asp-action="adminlogin">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                         <div class="form-group">
@@ -32,7 +32,6 @@
     </div>
 
     <div class="text-center mt-3">
-        <a asp-action="Index">Back to List</a>
     </div>
 </div>
 
@@ -41,3 +40,26 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+</body>
+
+<style>
+
+    .bgimg {
+        background-image: url(https://th.bing.com/th/id/OIG.uC1vK5We2rgXDx4mxgJS?w=270&h=270&c=6&r=0&o=5&dpr=1.3&pid=ImgGn);
+        opacity: 0.7;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll; /* Optional: This makes the background image fixed when scrolling */
+        /* Other styles you may want to include */
+        margin: 0; /* Remove default body margin */
+        padding: 0; /* Remove default body padding */
+    }
+
+    h1 {
+        color: white;
+    }
+
+    p {
+        color: white;
+    }
+</style>
